@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     private View.OnClickListener ckListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
             operacion();
         }
     };
@@ -40,25 +41,31 @@ public class MainActivity extends Activity {
     }
 
     private void operacion(){
-        EditText etKm = (EditText)findViewById(R.id.etkm);
+        EditText inKm = (EditText)findViewById(R.id.etkm);
+        int obKm = Integer.parseInt(inKm.getText().toString());
+        double millas =  1.6;
+        double res = obKm /millas;
 
-        int obKm = Integer.parseInt(etKm.getText().toString());
-        double millas = 1.6;
-        double resKm = obKm/millas;
-
-        TextView tvMensaje = (TextView)findViewById(R.id.tvrespuesta);
-        tvMensaje.setText(resKm + " Millas ");
+        Intent mi = new Intent(this, respuetaKm.class);
+        mi.putExtra("km", res );
+        startActivity(mi);
+      /*  TextView tvMensaje = (TextView)findViewById(R.id.tvrespuesta);
+        tvMensaje.setText(resKm + " Millas ");*/
     }
 
     private void OpGrados(){
         EditText etKm = (EditText)findViewById(R.id.etCel);
 
-        int obKm = Integer.parseInt(etKm.getText().toString());
+        int obgra = Integer.parseInt(etKm.getText().toString());
         double farenheit= 1.8;
-        double resGr = obKm*farenheit+32;
+        double resGr = obgra*farenheit+32;
 
-        TextView tvMensaje = (TextView)findViewById(R.id.tvCel);
-        tvMensaje.setText(resGr + " °F " );
+        Intent gra = new Intent(this, respuestaGrados.class);
+        gra.putExtra("grado", resGr );
+        startActivity(gra);
+
+        /*TextView tvMensaje = (TextView)findViewById(R.id.tvCel);
+        tvMensaje.setText(resGr + " °F " );*/
     }
 
     @Override

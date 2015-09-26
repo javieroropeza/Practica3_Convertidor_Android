@@ -38,7 +38,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="°Célsius a °Farenheit"
         android:id="@+id/textView2"
-        android:layout_below="@+id/tvrespuesta"
+        android:layout_below="@+id/mirespuesta"
         android:layout_alignStart="@+id/textView" />
 
     <TextView
@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/tvrespuesta"
+        android:id="@+id/mirespuesta"
         android:layout_below="@+id/btnKm"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
